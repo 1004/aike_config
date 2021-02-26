@@ -11,6 +11,12 @@ buildscript {
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+    // 这个插件的版本会跟着gradle版本有变化，如果不相符，会有Plugin with id 'com.github....maven' not found
+    // 最好的办法是看报黄的时候看它让你版本号改成多少你就改成多少
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
   }
 }
 
@@ -18,6 +24,8 @@ allprojects {
   repositories {
     google()
     jcenter()
+    maven { url "https://dl.bintray.com/xky888xky/aike_httpserver"}
+    maven { url "https://dl.bintray.com/xky888xky/aike_cache"}
   }
 }
 
